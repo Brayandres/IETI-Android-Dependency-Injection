@@ -20,6 +20,8 @@ import edu.eci.ieti.taskplannerapp.databinding.ActivityMainBinding;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.concurrent.Executor;
+
 import javax.inject.Inject;
 
 @AndroidEntryPoint
@@ -30,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Inject
     public AnalyticsAdapter analyticsAdapter;
+
+    @Inject
+    public Executor executor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
