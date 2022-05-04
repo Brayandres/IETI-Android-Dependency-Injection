@@ -13,15 +13,23 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import dagger.hilt.android.AndroidEntryPoint;
+import edu.eci.ieti.taskplannerapp.analytics.AnalyticsAdapter;
 import edu.eci.ieti.taskplannerapp.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
 
+import javax.inject.Inject;
+
+@AndroidEntryPoint
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private ActivityMainBinding binding;
+
+    @Inject
+    public AnalyticsAdapter analyticsAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,11 +51,6 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
-        System.out.println("\n--------------------- TESTING RETROFIT ---------------------");
-        System.out.println("Testing get:");
-        System.out.println("");
-        System.out.println("------------------------------------------------------------\n");
     }
 
     @Override
